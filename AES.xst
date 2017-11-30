@@ -4,7 +4,7 @@ run
 -ifn AES.prj
 -ofn AES
 -ofmt NGC
--p xa7a100t-2I-csg324
+-p xc7a100t-2-csg324
 -top AES
 -opt_mode Speed
 -opt_level 1

@@ -1,0 +1,7 @@
+vhdl isim_temp "../bytesub.vhd"
+vhdl isim_temp "../shiftrow.vhd"
+vhdl isim_temp "../mixcolumn.vhd"
+vhdl isim_temp "../Keyscheduler.vhd"
+vhdl isim_temp "../AddRoundKey.vhd"
+vhdl isim_temp "AES.vhd"
+vhdl isim_temp "tb.vhd"

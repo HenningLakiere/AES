@@ -1,0 +1,6 @@
+work	"../AddRoundKey.vhd"
+work	"../Keyscheduler.vhd"
+work	"../bytesub.vhd"
+work	"../mixcolumn.vhd"
+work	"../shiftrow.vhd"
+work	"AES.vhd"

@@ -5,55 +5,12 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 81: Net &lt;<arg fmt="%s" index="1">ADR_signal[127]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 113: <arg fmt="%s" index="1">enable</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 83: Net &lt;<arg fmt="%s" index="1">RC[3]</arg>&gt; does not have a driver.
-</msg>
+<msg type="info" file="Xst" num="3226" delta="old" >The RAM &lt;<arg fmt="%s" index="1">BS/Mram_BS_out</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 84: Net &lt;<arg fmt="%s" index="1">enable</arg>&gt; does not have a driver.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%d" index="2">94</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">KS</arg>&gt; of block &lt;<arg fmt="%s" index="4">Keyscheduler</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">AES</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%d" index="2">95</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ADR</arg>&gt; of block &lt;<arg fmt="%s" index="4">AddRoundKey</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">AES</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%d" index="2">96</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">BS</arg>&gt; of block &lt;<arg fmt="%s" index="4">ByteSub</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">AES</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%d" index="2">97</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">SR</arg>&gt; of block &lt;<arg fmt="%s" index="4">ShiftRow</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">AES</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%d" index="2">98</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">MC</arg>&gt; of block &lt;<arg fmt="%s" index="4">MixColumn</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">AES</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">text_in&lt;127:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%s" index="2">95</arg>: Output port &lt;<arg fmt="%s" index="3">ADR_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ADR</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%s" index="2">96</arg>: Output port &lt;<arg fmt="%s" index="3">BS_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BS</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\Users\Henni\Desktop\Chip\AES\AES.vhd</arg>&quot; line <arg fmt="%s" index="2">98</arg>: Output port &lt;<arg fmt="%s" index="3">MC_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">MC</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ADR_signal</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">BS_temp</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">RC</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">enable</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="0" delta="new" >The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
+<msg type="warning" file="Xst" num="1336" delta="old" > (*) More than 100% of Device resources are used
 </msg>
 
 </messages>

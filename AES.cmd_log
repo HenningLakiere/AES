@@ -29,3 +29,34 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I AES.ngc A
 map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
 map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
 map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I AES.ngc AES.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I AES.ngc AES.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I AES.ngc AES.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I AES.ngc AES.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+par -w -intstyle ise -ol high -mt off AES_map.ncd AES.ncd AES.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml AES.twx AES.ncd -o AES.twr AES.pcf 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xa7a100t-csg324-2I AES.ngc AES.ngd  
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+map -intstyle ise -p xa7a100t-csg324-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 
+xst -intstyle ise -ifn "D:/Users/Henni/Desktop/Chip/AES/AES.xst" -ofn "D:/Users/Henni/Desktop/Chip/AES/AES.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-2 AES.ngc AES.ngd  
+map -intstyle ise -p xc7a100t-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o AES_map.ncd AES.ngd AES.pcf 

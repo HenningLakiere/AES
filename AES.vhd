@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -34,6 +36,7 @@ entity AES is
 			start_key : in std_logic_vector (127 downto 0);
 			clk: in std_logic;
 			res: in std_logic;
+			enable: in std_logic;
 			text_out : out std_logic_vector (127 downto 0)
 			);
 end AES;
@@ -80,9 +83,11 @@ end component;
 
 signal ADR_temp, ADR_signal, BS_temp, SR_temp, MC_temp, key_temp: std_logic_vector(127 downto 0);
 signal BS_temp_part, ADR_temp_part : std_logic_vector(7 downto 0);
-signal RC : std_logic_vector(3 downto 0);
-signal enable : std_logic;
+signal RC : std_logic_vector(3 downto 0) := "0000";
+signal part_c : std_logic_vector(3 downto 0) := "0000";
 
+
+signal state: std_logic_vector(4 downto 0);
 constant KS_state: std_logic_vector(4 downto 0) := "00001";
 constant ADR_state:std_logic_vector(4 downto 0) := "00010";
 constant BS_state: std_logic_vector(4 downto 0) := "00100";
@@ -98,12 +103,102 @@ begin
 	MC		: MixColumn 	port map(MC_in => SR_temp ,MC_out => MC_temp);
 
 
-	process(clk, res, text_in)
+	process(clk, res, RC, text_in)
 		begin
 			if res='1' then
-			
+				RC <= (others => '0');
+				state <= ADR_state;
+				
 			else
-				ADR_temp_part <= text_in(7 downto 0);			
+				if (rising_edge(clk) and enable = '1')  then
+					
+					case state is
+					
+						when ADR_state =>
+							if RC = "0000" then
+								ADR_signal <= text_in;
+							elsif RC < "1001" then
+								ADR_signal <= MC_temp;
+							elsif RC = "1010" then
+								ADR_signal <= SR_temp;
+							elsif RC = "1011" then
+								text_out <= ADR_temp;
+							else
+								ADR_signal <= (others => '0');														
+							end if;
+							
+							state <= BS_state;
+							
+						when BS_state =>
+						
+							case part_c is
+								when "0000" =>
+									ADR_temp_part <= ADR_temp(7 downto 0);
+									BS_temp(7 downto 0) <= BS_temp_part;
+								when "0001" =>
+									ADR_temp_part <= ADR_temp(15 downto 8);
+									BS_temp(15 downto 8) <= BS_temp_part;
+								when "0010" =>
+									ADR_temp_part <= ADR_temp(23 downto 16);
+									BS_temp(23 downto 16) <= BS_temp_part;
+								when "0011" =>
+									ADR_temp_part <= ADR_temp(31 downto 24);
+									BS_temp(31 downto 24) <= BS_temp_part;
+								when "0100" =>
+									ADR_temp_part <= ADR_temp(39 downto 32);
+									BS_temp(39 downto 32) <= BS_temp_part;
+								when "0101" =>
+									ADR_temp_part <= ADR_temp(47 downto 40);
+									BS_temp(47 downto 40) <= BS_temp_part;
+								when "0110" =>
+									ADR_temp_part <= ADR_temp(55 downto 48);
+									BS_temp(55 downto 48) <= BS_temp_part;
+								when "0111" =>
+									ADR_temp_part <= ADR_temp(63 downto 56);
+									BS_temp(63 downto 56) <= BS_temp_part;
+								when "1000" =>
+									ADR_temp_part <= ADR_temp(71 downto 64);
+									BS_temp(71 downto 64) <= BS_temp_part;
+								when "1001" =>
+									ADR_temp_part <= ADR_temp(79 downto 72);
+									BS_temp(79 downto 72) <= BS_temp_part;
+								when "1010" =>
+									ADR_temp_part <= ADR_temp(87 downto 80);
+									BS_temp(87 downto 80) <= BS_temp_part;
+								when "1011" =>
+									ADR_temp_part <= ADR_temp(95 downto 88);
+									BS_temp(95 downto 88) <= BS_temp_part;
+								when "1100" =>
+									ADR_temp_part <= ADR_temp(103 downto 96);
+									BS_temp(103 downto 96) <= BS_temp_part;
+								when "1101" =>
+									ADR_temp_part <= ADR_temp(111 downto 104);
+									BS_temp(111 downto 104) <= BS_temp_part;
+								when "1110" =>
+									ADR_temp_part <= ADR_temp(119 downto 112);
+									BS_temp(119 downto 112) <= BS_temp_part;
+								when "1111" =>
+									ADR_temp_part <= ADR_temp(127 downto 120);
+									BS_temp(127 downto 120) <= BS_temp_part;
+									state <= SR_state;
+								when others =>
+									ADR_temp_part <= "00000000";
+									BS_temp(127 downto 0) <= (others => '0');
+							end case;
+			
+							part_c <= part_c + 1;
+							
+						when SR_state =>
+							state <= MC_state;
+						
+						when MC_state =>
+							RC <= RC + 1;
+							
+						when others =>
+							--do nothing
+						
+					end case;
+				end if;
 			end if;
 	end process;
 

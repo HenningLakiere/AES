@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: AES.prj
 
@@ -46,7 +46,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "AES"
 Output Format                      : NGC
-Target Device                      : xa7a100t-2I-csg324
+Target Device                      : xc7a100t-2-csg324
 
 ---- Source Options
 Top Module Name                    : AES
@@ -140,14 +140,8 @@ Elaborating entity <AddRoundKey> (architecture <AddRoundKey_arch>) from library 
 Elaborating entity <ShiftRow> (architecture <ShiftRow_arch>) from library <work>.
 
 Elaborating entity <MixColumn> (architecture <MixColumn_arch>) from library <work>.
-WARNING:HDLCompiler:634 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 81: Net <ADR_signal[127]> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 83: Net <RC[3]> does not have a driver.
-WARNING:HDLCompiler:634 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 84: Net <enable> does not have a driver.
-WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 94. All outputs of instance <KS> of block <Keyscheduler> are unconnected in block <AES>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 95. All outputs of instance <ADR> of block <AddRoundKey> are unconnected in block <AES>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 96. All outputs of instance <BS> of block <ByteSub> are unconnected in block <AES>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 97. All outputs of instance <SR> of block <ShiftRow> are unconnected in block <AES>. Underlying logic will be removed.
-WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 98. All outputs of instance <MC> of block <MixColumn> are unconnected in block <AES>. Underlying logic will be removed.
+WARNING:HDLCompiler:92 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 113: enable should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 184. Case statement is complete. others clause is never selected
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -155,60 +149,191 @@ WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 98. All output
 
 Synthesizing Unit <AES>.
     Related source file is "D:\Users\Henni\Desktop\Chip\AES\AES.vhd".
-WARNING:Xst:647 - Input <text_in<127:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 95: Output port <ADR_out> of the instance <ADR> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 96: Output port <BS_out> of the instance <BS> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 98: Output port <MC_out> of the instance <MC> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <ADR_signal> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <BS_temp> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <RC> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <enable> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 4-bit register for signal <RC>.
+    Found 5-bit register for signal <state>.
+    Found 128-bit register for signal <text_out>.
+    Found 8-bit register for signal <ADR_temp_part>.
+    Found 128-bit register for signal <BS_temp>.
+    Found 4-bit register for signal <part_c>.
+    Found 128-bit register for signal <ADR_signal>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | res (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00010                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <part_c[3]_GND_5_o_add_15_OUT> created at line 189.
+    Found 4-bit adder for signal <RC[3]_GND_5_o_add_16_OUT> created at line 195.
+    Found 8-bit 16-to-1 multiplexer for signal <part_c[3]_ADR_temp[127]_wide_mux_12_OUT> created at line 134.
+    Found 128-bit 16-to-1 multiplexer for signal <part_c[3]_BS_temp_part[7]_wide_mux_13_OUT> created at line 134.
+    Found 4-bit comparator greater for signal <RC[3]_PWR_5_o_LessThan_2_o> created at line 120
     Summary:
-	no macro.
+	inferred   2 Adder/Subtractor(s).
+	inferred 400 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
 Unit <AES> synthesized.
+
+Synthesizing Unit <Keyscheduler>.
+    Related source file is "D:\Users\Henni\Desktop\Chip\Keyscheduler.vhd".
+    Found 128-bit register for signal <key_reg>.
+    Found 4-bit comparator greater for signal <roundcounter[3]_GND_6_o_LessThan_13_o> created at line 97
+    Summary:
+	inferred 128 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <Keyscheduler> synthesized.
 
 Synthesizing Unit <ByteSub>.
     Related source file is "D:\Users\Henni\Desktop\Chip\bytesub.vhd".
+    Found 256x8-bit Read Only RAM for signal <BS_out>
+    Summary:
+	inferred   1 RAM(s).
+Unit <ByteSub> synthesized.
+
+Synthesizing Unit <AddRoundKey>.
+    Related source file is "D:\Users\Henni\Desktop\Chip\AddRoundKey.vhd".
+    Found 32-bit adder for signal <ADR_out<127:96>> created at line 16.
+    Found 32-bit adder for signal <ADR_out<95:64>> created at line 17.
+    Found 32-bit adder for signal <ADR_out<63:32>> created at line 18.
+    Found 32-bit adder for signal <ADR_out<31:0>> created at line 19.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+Unit <AddRoundKey> synthesized.
+
+Synthesizing Unit <ShiftRow>.
+    Related source file is "D:\Users\Henni\Desktop\Chip\shiftrow.vhd".
     Summary:
 	no macro.
-Unit <ByteSub> synthesized.
+Unit <ShiftRow> synthesized.
+
+Synthesizing Unit <MixColumn>.
+    Related source file is "D:\Users\Henni\Desktop\Chip\mixcolumn.vhd".
+    Summary:
+	inferred  16 Multiplexer(s).
+Unit <MixColumn> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# RAMs                                                 : 5
+ 256x8-bit single-port Read Only RAM                   : 5
+# Adders/Subtractors                                   : 6
+ 32-bit adder                                          : 4
+ 4-bit adder                                           : 2
+# Registers                                            : 7
+ 128-bit register                                      : 4
+ 4-bit register                                        : 2
+ 8-bit register                                        : 1
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 21
+ 128-bit 16-to-1 multiplexer                           : 1
+ 128-bit 2-to-1 multiplexer                            : 3
+ 8-bit 16-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 16
+# FSMs                                                 : 1
+# Xors                                                 : 37
+ 32-bit xor2                                           : 4
+ 8-bit xor2                                            : 17
+ 8-bit xor5                                            : 16
+
 =========================================================================
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst - The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
-Loading device for application Rf_Device from file '7a100t.nph' in environment D:\xilinx\14.7\ISE_DS\ISE\.
-Loading device for application Rf_Device from file '7a100t.nph' in environment D:\xilinx\14.7\ISE_DS\ISE\.
+
+Synthesizing (advanced) Unit <AES>.
+The following registers are absorbed into counter <RC>: 1 register on signal <RC>.
+The following registers are absorbed into counter <part_c>: 1 register on signal <part_c>.
+INFO:Xst:3226 - The RAM <BS/Mram_BS_out> will be implemented as a BLOCK RAM, absorbing the following register(s): <ADR_temp_part>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to internal node          | low      |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <part_c[3]_ADR_temp[127]_wide_mux_12_OUT> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <BS_temp_part>  |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <AES> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# RAMs                                                 : 5
+ 256x8-bit single-port block Read Only RAM             : 1
+ 256x8-bit single-port distributed Read Only RAM       : 4
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 4
+# Counters                                             : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 512
+ Flip-Flops                                            : 512
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 21
+ 128-bit 16-to-1 multiplexer                           : 1
+ 128-bit 2-to-1 multiplexer                            : 3
+ 8-bit 16-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 16
+# FSMs                                                 : 1
+# Xors                                                 : 37
+ 32-bit xor2                                           : 4
+ 8-bit xor2                                            : 17
+ 8-bit xor5                                            : 16
+
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00010 | 00
+ 00100 | 01
+ 01000 | 11
+ 10000 | 10
+-------------------
 
 Optimizing unit <AES> ...
 
+Optimizing unit <Keyscheduler> ...
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block AES, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block AES, actual ratio is 1.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 522
+ Flip-Flops                                            : 522
+
 =========================================================================
 
 =========================================================================
@@ -230,27 +355,59 @@ Top Level Output File Name         : AES.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
+# BELS                             : 1229
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 155
+#      LUT3                        : 6
+#      LUT4                        : 122
+#      LUT5                        : 37
+#      LUT6                        : 533
+#      MUXCY                       : 124
+#      MUXF7                       : 80
+#      MUXF8                       : 40
+#      XORCY                       : 128
+# FlipFlops/Latches                : 522
+#      FDC                         : 2
+#      FDCE                        : 132
+#      FDE                         : 260
+#      FDRE                        : 128
+# RAMS                             : 1
+#      RAMB18E1                    : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 386
+#      IBUF                        : 258
+#      OBUF                        : 128
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : xa7a100tcsg324-2i 
+Selected Device : 7a100tcsg324-2 
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:             522  out of  126800     0%  
+ Number of Slice LUTs:                  856  out of  63400     1%  
+    Number used as Logic:               856  out of  63400     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:    856
+   Number with an unused Flip Flop:     334  out of    856    39%  
+   Number with an unused LUT:             0  out of    856     0%  
+   Number of fully used LUT-FF pairs:   522  out of    856    60%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                         386
- Number of bonded IOBs:                   0  out of    210     0%  
+ Number of IOs:                         387
+ Number of bonded IOBs:                 387  out of    210   184% (*) 
 
 Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    135     0%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
 ---------------------------
 Partition Resource Summary:
@@ -270,19 +427,27 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 523   |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+N1(XST_GND:G)                      | NONE(BS/Mram_BS_out)   | 2     |
+-----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Minimum period: 4.396ns (Maximum Frequency: 227.502MHz)
+   Minimum input arrival time before clock: 2.685ns
+   Maximum output required time after clock: 0.737ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -290,21 +455,126 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.396ns (frequency: 227.502MHz)
+  Total number of paths / destination ports: 22050 / 1051
+-------------------------------------------------------------------------
+Delay:               4.396ns (Levels of Logic = 36)
+  Source:            KS/key_reg_0 (FF)
+  Destination:       BS/Mram_BS_out (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: KS/key_reg_0 to BS/Mram_BS_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            34   0.398   0.487  KS/key_reg_0 (KS/key_reg_0)
+     LUT2:I1->O            1   0.105   0.000  ADR/Madd_ADR_out<31:0>_lut<0> (ADR/Madd_ADR_out<31:0>_lut<0>)
+     MUXCY:S->O            1   0.392   0.000  ADR/Madd_ADR_out<31:0>_cy<0> (ADR/Madd_ADR_out<31:0>_cy<0>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<1> (ADR/Madd_ADR_out<31:0>_cy<1>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<2> (ADR/Madd_ADR_out<31:0>_cy<2>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<3> (ADR/Madd_ADR_out<31:0>_cy<3>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<4> (ADR/Madd_ADR_out<31:0>_cy<4>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<5> (ADR/Madd_ADR_out<31:0>_cy<5>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<6> (ADR/Madd_ADR_out<31:0>_cy<6>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<7> (ADR/Madd_ADR_out<31:0>_cy<7>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<8> (ADR/Madd_ADR_out<31:0>_cy<8>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<9> (ADR/Madd_ADR_out<31:0>_cy<9>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<10> (ADR/Madd_ADR_out<31:0>_cy<10>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<11> (ADR/Madd_ADR_out<31:0>_cy<11>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<12> (ADR/Madd_ADR_out<31:0>_cy<12>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<13> (ADR/Madd_ADR_out<31:0>_cy<13>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<14> (ADR/Madd_ADR_out<31:0>_cy<14>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<15> (ADR/Madd_ADR_out<31:0>_cy<15>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<16> (ADR/Madd_ADR_out<31:0>_cy<16>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<17> (ADR/Madd_ADR_out<31:0>_cy<17>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<18> (ADR/Madd_ADR_out<31:0>_cy<18>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<19> (ADR/Madd_ADR_out<31:0>_cy<19>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<20> (ADR/Madd_ADR_out<31:0>_cy<20>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<21> (ADR/Madd_ADR_out<31:0>_cy<21>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<22> (ADR/Madd_ADR_out<31:0>_cy<22>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<23> (ADR/Madd_ADR_out<31:0>_cy<23>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<24> (ADR/Madd_ADR_out<31:0>_cy<24>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<25> (ADR/Madd_ADR_out<31:0>_cy<25>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<26> (ADR/Madd_ADR_out<31:0>_cy<26>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<27> (ADR/Madd_ADR_out<31:0>_cy<27>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<28> (ADR/Madd_ADR_out<31:0>_cy<28>)
+     MUXCY:CI->O           1   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<29> (ADR/Madd_ADR_out<31:0>_cy<29>)
+     MUXCY:CI->O           0   0.025   0.000  ADR/Madd_ADR_out<31:0>_cy<30> (ADR/Madd_ADR_out<31:0>_cy<30>)
+     XORCY:CI->O           2   0.417   0.362  ADR/Madd_ADR_out<31:0>_xor<31> (ADR_temp<31>)
+     LUT6:I5->O            1   0.105   0.000  Mmux_part_c[3]_ADR_temp[127]_wide_mux_12_OUT_67 (Mmux_part_c[3]_ADR_temp[127]_wide_mux_12_OUT_67)
+     MUXF7:I0->O           1   0.306   0.000  Mmux_part_c[3]_ADR_temp[127]_wide_mux_12_OUT_4_f7_6 (Mmux_part_c[3]_ADR_temp[127]_wide_mux_12_OUT_4_f77)
+     MUXF8:I0->O           1   0.244   0.339  Mmux_part_c[3]_ADR_temp[127]_wide_mux_12_OUT_2_f8_6 (part_c[3]_ADR_temp[127]_wide_mux_12_OUT<7>)
+     RAMB18E1:ADDRARDADDR10        0.490          BS/Mram_BS_out
+    ----------------------------------------
+    Total                      4.396ns (3.207ns logic, 1.189ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1558 / 1041
+-------------------------------------------------------------------------
+Offset:              2.685ns (Levels of Logic = 3)
+  Source:            res (PAD)
+  Destination:       ADR_signal_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: res to ADR_signal_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           137   0.001   0.798  res_IBUF (res_IBUF)
+     LUT4:I0->O            3   0.105   0.792  _n0185_inv11 (_n0185_inv1)
+     LUT5:I0->O          128   0.105   0.487  _n0162<4>1 (_n0162)
+     FDRE:R                    0.397          ADR_signal_0
+    ----------------------------------------
+    Total                      2.685ns (0.608ns logic, 2.077ns route)
+                                       (22.6% logic, 77.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 128 / 128
+-------------------------------------------------------------------------
+Offset:              0.737ns (Levels of Logic = 1)
+  Source:            text_out_127 (FF)
+  Destination:       text_out<127> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: text_out_127 to text_out<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.398   0.339  text_out_127 (text_out_127)
+     OBUF:I->O                 0.000          text_out_127_OBUF (text_out<127>)
+    ----------------------------------------
+    Total                      0.737ns (0.398ns logic, 0.339ns route)
+                                       (54.0% logic, 46.0% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.396|         |         |         |
+---------------+---------+---------+---------+---------+
+
 =========================================================================
 
 
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 27.63 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.14 secs
  
 --> 
 
-Total memory usage is 579508 kilobytes
+Total memory usage is 320360 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   14 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 
