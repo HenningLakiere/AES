@@ -1,1 +1,6 @@
+vhdl work "../bytesub.vhd"
+vhdl work "../shiftrow.vhd"
+vhdl work "../mixcolumn.vhd"
+vhdl work "../Keyscheduler.vhd"
+vhdl work "../AddRoundKey.vhd"
 vhdl work "AES.vhd"

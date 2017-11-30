@@ -76,12 +76,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1511958906" xil_pn:in_ck="-4593036485383111684" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-6762683506779800931" xil_pn:start_ts="1511958870">
+    <transform xil_pn:end_ts="1512003456" xil_pn:in_ck="3685574848700096066" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-6762683506779800931" xil_pn:start_ts="1512003426">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="AES.lso"/>
       <outfile xil_pn:name="AES.ngc"/>
       <outfile xil_pn:name="AES.ngr"/>
@@ -98,26 +96,26 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1511942314" xil_pn:in_ck="86745967935" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8104021908557529711" xil_pn:start_ts="1511942305">
-      <status xil_pn:value="AbortedRun"/>
+    <transform xil_pn:end_ts="1512003462" xil_pn:in_ck="86745967935" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8104021908557529711" xil_pn:start_ts="1512003456">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="AES.bld"/>
       <outfile xil_pn:name="AES.ngd"/>
       <outfile xil_pn:name="AES_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1511942325" xil_pn:in_ck="86745967936" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="3373610943407121171" xil_pn:start_ts="1511942314">
+    <transform xil_pn:end_ts="1512004049" xil_pn:in_ck="86745967936" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="3373610943407121171" xil_pn:start_ts="1512004041">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="AES_map.map"/>
       <outfile xil_pn:name="AES_map.mrp"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:name="TRAN_preRouteTrce">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
     </transform>
   </transforms>
 

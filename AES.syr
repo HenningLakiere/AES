@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: AES.prj
 
@@ -105,6 +105,21 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Parsing VHDL file "D:\Users\Henni\Desktop\Chip\bytesub.vhd" into library work
+Parsing entity <ByteSub>.
+Parsing architecture <internals> of entity <bytesub>.
+Parsing VHDL file "D:\Users\Henni\Desktop\Chip\shiftrow.vhd" into library work
+Parsing entity <ShiftRow>.
+Parsing architecture <ShiftRow_arch> of entity <shiftrow>.
+Parsing VHDL file "D:\Users\Henni\Desktop\Chip\mixcolumn.vhd" into library work
+Parsing entity <MixColumn>.
+Parsing architecture <MixColumn_arch> of entity <mixcolumn>.
+Parsing VHDL file "D:\Users\Henni\Desktop\Chip\Keyscheduler.vhd" into library work
+Parsing entity <Keyscheduler>.
+Parsing architecture <Behavioral> of entity <keyscheduler>.
+Parsing VHDL file "D:\Users\Henni\Desktop\Chip\AddRoundKey.vhd" into library work
+Parsing entity <AddRoundKey>.
+Parsing architecture <AddRoundKey_arch> of entity <addroundkey>.
 Parsing VHDL file "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" into library work
 Parsing entity <AES>.
 Parsing architecture <Behavioral> of entity <aes>.
@@ -115,19 +130,48 @@ Parsing architecture <Behavioral> of entity <aes>.
 
 Elaborating entity <AES> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <Keyscheduler> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <ByteSub> (architecture <internals>) from library <work>.
+INFO:HDLCompiler:679 - "D:\Users\Henni\Desktop\Chip\bytesub.vhd" Line 272. Case statement is complete. others clause is never selected
+
+Elaborating entity <AddRoundKey> (architecture <AddRoundKey_arch>) from library <work>.
+
+Elaborating entity <ShiftRow> (architecture <ShiftRow_arch>) from library <work>.
+
+Elaborating entity <MixColumn> (architecture <MixColumn_arch>) from library <work>.
+WARNING:HDLCompiler:634 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 81: Net <ADR_signal[127]> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 83: Net <RC[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" Line 84: Net <enable> does not have a driver.
+WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 94. All outputs of instance <KS> of block <Keyscheduler> are unconnected in block <AES>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 95. All outputs of instance <ADR> of block <AddRoundKey> are unconnected in block <AES>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 96. All outputs of instance <BS> of block <ByteSub> are unconnected in block <AES>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 97. All outputs of instance <SR> of block <ShiftRow> are unconnected in block <AES>. Underlying logic will be removed.
+WARNING:Xst:2972 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 98. All outputs of instance <MC> of block <MixColumn> are unconnected in block <AES>. Underlying logic will be removed.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <AES>.
     Related source file is "D:\Users\Henni\Desktop\Chip\AES\AES.vhd".
-WARNING:Xst:647 - Input <text_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <key_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <text_in<127:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 95: Output port <ADR_out> of the instance <ADR> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 96: Output port <BS_out> of the instance <BS> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\Users\Henni\Desktop\Chip\AES\AES.vhd" line 98: Output port <MC_out> of the instance <MC> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <ADR_signal> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <BS_temp> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <RC> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <enable> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <AES> synthesized.
+
+Synthesizing Unit <ByteSub>.
+    Related source file is "D:\Users\Henni\Desktop\Chip\bytesub.vhd".
+    Summary:
+	no macro.
+Unit <ByteSub> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -203,7 +247,7 @@ Slice Logic Distribution:
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                         389
+ Number of IOs:                         386
  Number of bonded IOBs:                   0  out of    210     0%  
 
 Specific Feature Utilization:
@@ -253,14 +297,14 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 31.00 secs
-Total CPU time to Xst completion: 31.39 secs
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 27.63 secs
  
 --> 
 
-Total memory usage is 610228 kilobytes
+Total memory usage is 579508 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    5 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 

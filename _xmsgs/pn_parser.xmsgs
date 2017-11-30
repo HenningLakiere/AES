@@ -11,31 +11,19 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/AES/AES.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/AES/AES.vhd</arg>&quot; Line <arg fmt="%d" index="2">102</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/AddRoundKey.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/DataPathMux.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/Keyscheduler.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/DataPathMux.vhd</arg>&quot; Line <arg fmt="%d" index="2">16</arg>. <arg fmt="%s" index="3">Syntax error near &quot;begin&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/bytesub.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/DataPathMux.vhd</arg>&quot; Line <arg fmt="%d" index="2">20</arg>. <arg fmt="%s" index="3">Syntax error near &quot;when&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/mixcolumn.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/DataPathMux.vhd</arg>&quot; Line <arg fmt="%d" index="2">22</arg>. <arg fmt="%s" index="3">Syntax error near &quot;when&quot;.</arg>
-</msg>
-
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/DataPathMux.vhd</arg>&quot; Line <arg fmt="%d" index="2">24</arg>. <arg fmt="%s" index="3">Syntax error near &quot;case&quot;.</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/KeyMux.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/KeyMux.vhd</arg>&quot; Line <arg fmt="%d" index="2">17</arg>. <arg fmt="%s" index="3">Syntax error near &quot;select&quot;.</arg>
-</msg>
-
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">D:/Users/Henni/Desktop/Chip/KeyMux.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;case&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/Users/Henni/Desktop/Chip/shiftrow.vhd&quot; into library work</arg>
 </msg>
 
 </messages>
