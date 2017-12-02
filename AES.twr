@@ -2,12 +2,12 @@
 Release 14.7 Trace  (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-D:\xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2I -n
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 1 -n
 3 -fastpaths -xml AES.twx AES.ncd -o AES.twr AES.pcf
 
 Design file:              AES.ncd
 Physical constraint file: AES.pcf
-Device,package,speed:     xa7a100t,csg324,I,-2I (PRELIMINARY 1.07 2013-10-13)
+Device,package,speed:     xc6vlx75t,ff484,C,-1 (PRODUCTION 1.17 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -33,14 +33,14 @@ No constraints were found to generate data for the Data Sheet Report section.
 Use the Advanced Analysis (-a) option or generate global constraints for each
 clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-Analysis completed Thu Nov 30 23:39:11 2017 
+Analysis completed Fri Dec 01 09:14:42 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 405 MB
+Peak Memory Usage: 320 MB
 
 
 

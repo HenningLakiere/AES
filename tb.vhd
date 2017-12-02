@@ -46,7 +46,8 @@ ARCHITECTURE behavior OF tb IS
          clk : IN  std_logic;
          res : IN  std_logic;
          enable : IN  std_logic;
-         text_out : OUT  std_logic_vector(127 downto 0)
+         text_out : OUT  std_logic_vector(127 downto 0);
+			state_out : OUT std_logic_vector(4 downto 0)
         );
     END COMPONENT;
     
@@ -60,9 +61,10 @@ ARCHITECTURE behavior OF tb IS
 
  	--Outputs
    signal text_out : std_logic_vector(127 downto 0);
+	signal state_out : std_logic_vector(4 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 1 ns;
+   constant clk_period : time := 2 ns;
  
 BEGIN
  
@@ -73,7 +75,8 @@ BEGIN
           clk => clk,
           res => res,
           enable => enable,
-          text_out => text_out
+          text_out => text_out,
+			 state_out => state_out
         );
 
    -- Clock process definitions
@@ -104,8 +107,8 @@ BEGIN
 		enable <= '1';
 		wait for clk_period;
 		
-		text_in <= "10011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001";
-		start_key <= "10011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001";
+		text_in <= "aaaaaaaabbbbbbbbccccccccdddddddd";
+		start_key <= "11111111222222223333333344444444";
 		
 
 

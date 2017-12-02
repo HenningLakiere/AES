@@ -5,5 +5,14 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="304" delta="unknown" >"C:/Users/Henning/Desktop/ChipOntwerp/AES/tb.vhd" Line 110: Character &apos;<arg fmt="%c" index="1">a</arg>&apos; is not in element type <arg fmt="%s" index="2">std_logic</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="304" delta="unknown" >"C:/Users/Henning/Desktop/ChipOntwerp/AES/tb.vhd" Line 111: Character &apos;<arg fmt="%c" index="1">2</arg>&apos; is not in element type <arg fmt="%s" index="2">std_logic</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="unknown" >"C:/Users/Henning/Desktop/ChipOntwerp/AES/tb.vhd" Line 38: Unit &lt;<arg fmt="%s" index="1">behavior</arg>&gt; ignored due to previous errors.
+</msg>
+
 </messages>
 

@@ -1,19 +1,17 @@
-Running: D:\xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o D:/Users/Henni/Desktop/Chip/AES/tb_isim_beh.exe -prj D:/Users/Henni/Desktop/Chip/AES/tb_beh.prj work.tb 
-ISim P.20131013 (signature 0x8ef4fb42)
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Henning/Desktop/ChipOntwerp/AES/tb_isim_beh.exe -prj C:/Users/Henning/Desktop/ChipOntwerp/AES/tb_beh.prj work.tb 
+ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/../bytesub.vhd" into library work
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/../shiftrow.vhd" into library work
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/../mixcolumn.vhd" into library work
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/../Keyscheduler.vhd" into library work
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/../AddRoundKey.vhd" into library work
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/AES.vhd" into library work
-Parsing VHDL file "D:/Users/Henni/Desktop/Chip/AES/tb.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/bytesub.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/shiftrow.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/mixcolumn.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/Keyscheduler.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/AddRoundKey.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/AES.vhd" into library work
+Parsing VHDL file "C:/Users/Henning/Desktop/ChipOntwerp/AES/tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 158384 KB
-Fuse CPU Usage: 186 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
@@ -28,6 +26,6 @@ Compiling architecture behavior of entity tb
 Time Resolution for simulation is 1ps.
 Waiting for 3 sub-compilation(s) to finish...
 Compiled 17 VHDL Units
-Built simulation executable D:/Users/Henni/Desktop/Chip/AES/tb_isim_beh.exe
-Fuse Memory Usage: 175416 KB
-Fuse CPU Usage: 280 ms
+Built simulation executable C:/Users/Henning/Desktop/ChipOntwerp/AES/tb_isim_beh.exe
+Fuse Memory Usage: 34904 KB
+Fuse CPU Usage: 640 ms

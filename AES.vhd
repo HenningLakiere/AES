@@ -37,7 +37,8 @@ entity AES is
 			clk: in std_logic;
 			res: in std_logic;
 			enable: in std_logic;
-			text_out : out std_logic_vector (127 downto 0)
+			text_out : out std_logic_vector (127 downto 0);
+			state_out : out std_logic_vector (4 downto 0)
 			);
 end AES;
 
@@ -101,9 +102,11 @@ begin
 	BS		: ByteSub 		port map(BS_in => ADR_temp_part ,BS_out => BS_temp_part);
 	SR		: ShiftRow 		port map(SR_in => BS_temp ,SR_out => SR_temp);
 	MC		: MixColumn 	port map(MC_in => SR_temp ,MC_out => MC_temp);
+	
+	state_out <= state;
 
 
-	process(clk, res, RC, text_in)
+	process(clk, res)
 		begin
 			if res='1' then
 				RC <= (others => '0');
@@ -123,6 +126,8 @@ begin
 								ADR_signal <= SR_temp;
 							elsif RC = "1011" then
 								text_out <= ADR_temp;
+								RC <= "0000";
+								enable <= '0';
 							else
 								ADR_signal <= (others => '0');														
 							end if;
@@ -180,6 +185,7 @@ begin
 								when "1111" =>
 									ADR_temp_part <= ADR_temp(127 downto 120);
 									BS_temp(127 downto 120) <= BS_temp_part;
+									part_c <= "0000";
 									state <= SR_state;
 								when others =>
 									ADR_temp_part <= "00000000";
@@ -193,6 +199,7 @@ begin
 						
 						when MC_state =>
 							RC <= RC + 1;
+							state <= ADR_state;
 							
 						when others =>
 							--do nothing
